@@ -1,2 +1,7 @@
-h1 Hello!
-p How are you?
+h1 Задачи
+
+- if @projects.present?
+  - @projects.each do |project|
+    = project.title
+- else
+  h2 'Проектов пока нет'
