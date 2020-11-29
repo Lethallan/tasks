@@ -3,11 +3,11 @@ class TodosController < ApplicationController
   before_action :find_todo, only: %i[edit update]
 
   def new
-    @todo = @project.todo.new
+    @todo = @project.todos.new
   end
 
   def create
-    @todo = @project.todo.new(todo_params)
+    @todo = @project.todos.new(todo_params)
 
     if @todo.save
       redirect_to root_path
