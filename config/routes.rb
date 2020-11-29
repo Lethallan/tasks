@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
   root 'projects#index'
-  get 'projects/index'
+
+  resources :projects do
+    resources :todos, shallow: true, except: :index
+  end
 end
