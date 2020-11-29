@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
   before_action :find_project, only: :index
 
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_project_not_found
+
   def index
     # render json: { message: "ok" }
     @projects = Project.all
@@ -29,5 +31,9 @@ class ProjectsController < ApplicationController
 
   def find_project
     @project = Project.find(params[:id])
+  end
+
+  def rescue_with_project_not_found
+    render plain: 'Something is wrong. Maybe you should add some projects?'
   end
 end
