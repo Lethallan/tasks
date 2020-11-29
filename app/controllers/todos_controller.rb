@@ -30,7 +30,7 @@ class TodosController < ApplicationController
   private
 
   def todo_params
-    params.require(:todo).permit(:title, :done)
+    params.require(:todo).permit(:title, :isCompleted)
   end
 
   def find_project
