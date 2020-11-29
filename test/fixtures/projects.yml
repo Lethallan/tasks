@@ -1,0 +1,9 @@
+family:
+  id: 1
+  title: 'Семья'
+work:
+  id: 2
+  title: 'Работа'
+other:
+  id: 3
+  title: 'Прочее'
